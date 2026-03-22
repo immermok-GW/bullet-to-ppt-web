@@ -1,4 +1,12 @@
 import streamlit as st
+
+st.set_page_config(
+    page_title="Bullet to PPT 神器",          # 瀏覽器標籤名稱
+    page_icon="🚀",                           # 頁面小圖示（可以用 emoji）
+    layout="wide",                            # 寬版布局（左右留白變少，更專業）
+    initial_sidebar_state="auto"              # 側邊欄自動展開/收合
+)
+
 import json
 from openai import OpenAI
 from pptx import Presentation
