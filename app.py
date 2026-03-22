@@ -1,11 +1,12 @@
 import streamlit as st
 
-st.set_page_config(
-    page_title="Bullet to PPT 神器",          # 瀏覽器標籤名稱
-    page_icon="🚀",                           # 頁面小圖示（可以用 emoji）
-    layout="wide",                            # 寬版布局（左右留白變少，更專業）
-    initial_sidebar_state="auto"              # 側邊欄自動展開/收合
-)
+# 載入自訂 CSS
+try:
+    with open(".streamlit/custom.css") as f:
+        css = f.read()
+    st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
+except FileNotFoundError:
+    st.warning("custom.css not found, skipping custom styles.")
 
 import json
 from openai import OpenAI
